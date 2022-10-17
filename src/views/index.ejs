@@ -1,0 +1,37 @@
+<%- include('partials/_header');&>
+
+<div>
+  <h1>Sistema de usuario</h1>
+  <form action="/add" method="post">
+    <input type="text" name="nombre" placeholder="Nombre" />
+    <input type="text" name="correo" placeholder="Correo electronidco" />
+    <input type="text" name="rolU" placeholder="Rol" />
+    <input type="text" name="contraseña" placeholder="Contraseña" />
+    <button>Agregar</button>
+  </form>
+</div>
+
+<div>
+  <h1>Usuarios registrados</h1>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Rol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(var i=0; i < tasks.length; i++){%>
+    <tr>
+      <td><%= i + 1%></td>o}
+      <td><strong><%= tasks[i].title %></strong></td>
+      <td>
+          <a href="/edit/<%= tasks[i]._id%>">Editar</a>
+          <a href="/delete/<%= tasks[i]._id %>">Eliminar</a>
+      </td>
+    </tr>
+    <%}%>
+  </tbody>
+</div>
+
+<%- include('partials/_footer');%>
