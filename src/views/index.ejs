@@ -1,14 +1,32 @@
 <%- include('partials/_header'); %>
 
-<div class="prueba">
-  <h1>Sistema de usuario</h1>
-  <form action="/add" method="post">
-    <input  type="text" name="nombre" placeholder="Nombre" />
-    <input type="text" name="correo" placeholder="Correo electronidco" />
-    <input type="text" name="rolU" placeholder="Rol" />
-    <input type="text" name="contraseña" placeholder="Contraseña" />
-    <button type="submit">Agregar</button>
-  </form>
+<div class="container">
+  <div class="row justify-content-center aling-items-center">
+    <div class="col p-5">
+      <div class="text-center">
+        <h1>Sistema de usuario</h1>
+      </div>
+      <form action="/add" method="post" class="form-horizontal">
+        <div class="input-group p-2">
+          <label for="" class="col-sm-2">Nombre</label>
+          <input type="text" name="nombre" />
+        </div>
+        <div class="input-group p-2">
+          <label class="col-sm-2" for="">Correo electrnonico</label>
+          <input type="text" name="correo" />
+        </div>
+        <div class="input-group p-2">
+          <label class="col-sm-2" for="">Rol</label>
+          <input type="text" name="rolU" />
+        </div>
+        <div class="input-group p-2">
+          <label class="col-sm-2" for="">Contraseña</label>
+          <input type="text" name="contraseña" />
+        </div>
+        <button type="submit" class="  ">Agregar</button>
+      </form>
+    </div>
+  </div>
 </div>
 
 <div>
