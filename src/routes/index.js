@@ -15,15 +15,21 @@ router.post('/add', async (req, res) => { //Agrego usuario
     res.redirect('/');
 });
 
+router.get("/edit/:id", async (req, res) => {
+    const task = await Task.findById(req.params.id);
+    console.log(task);
+    res.render("edit", {task});
+});
+
 router.post('/edit/:id', async (req, res) => {
     const {id} = req.params;
-    await Task.update({_id: id});
+    await Task.update({_id: id}, req.body);
     res.redirect('/');
 });
 
 router.get('/delete/:id', async (req, res) => {
     let {id} = req.params;
-    await Task.removw({_id: id});
+    await Task.remove({_id: id});
     res.redirect('/');
 });
 

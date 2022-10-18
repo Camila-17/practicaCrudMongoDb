@@ -1,13 +1,13 @@
-<%- include('partials/_header');&>
+<%- include('partials/_header'); %>
 
 <div>
   <h1>Sistema de usuario</h1>
   <form action="/add" method="post">
-    <input type="text" name="nombre" placeholder="Nombre" />
+    <input  type="text" name="nombre" placeholder="Nombre" />
     <input type="text" name="correo" placeholder="Correo electronidco" />
     <input type="text" name="rolU" placeholder="Rol" />
     <input type="text" name="contraseña" placeholder="Contraseña" />
-    <button>Agregar</button>
+    <button type="submit">Agregar</button>
   </form>
 </div>
 
@@ -23,11 +23,13 @@
   <tbody>
     <% for(var i=0; i < tasks.length; i++){%>
     <tr>
-      <td><%= i + 1%></td>o}
-      <td><strong><%= tasks[i].title %></strong></td>
+      <!-- <td><%= i + 1%></td> Si funciona -->
+      <td><%= tasks[i].nombre %></td>
+      <td><%= tasks[i].correo %></td>
+      <td><%= tasks[i].rolU %></td>
       <td>
-          <a href="/edit/<%= tasks[i]._id%>">Editar</a>
-          <a href="/delete/<%= tasks[i]._id %>">Eliminar</a>
+        <a href="/edit/<%= tasks[i]._id%>">Editar</a>
+        <a href="/delete/<%= tasks[i]._id %>">Eliminar</a>
       </td>
     </tr>
     <%}%>

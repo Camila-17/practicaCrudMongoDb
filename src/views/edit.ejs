@@ -1,0 +1,9 @@
+<%- include('partials/_header'); %>
+
+<form action="/edit/<%= task.id %>" method="post">
+    <input type="text" name="nombre" placeholder="Nombre" value="<%= task.nombre %>">
+    <input type="text" name="correo" placeholder="Correo electronico" value="<%= task.correo %>">
+    <button type="submit">Actualizar</button>
+</form>
+
+<%- include('partials/_footer'); %>
